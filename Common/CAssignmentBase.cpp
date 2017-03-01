@@ -172,7 +172,7 @@ bool CAssignmentBase::RunComputeTask(IComputeTask& Task, size_t LocalWorkSize[3]
 	// Running the same task on the GPU.
 	cout << "Computing GPU result...";
 
-	// Runing the kernel N times. This make the measurement of the execution time more accurate.
+	// Running the kernel N times. This make the measurement of the execution time more accurate.
 	Task.ComputeGPU(m_CLContext, m_CLCommandQueue, LocalWorkSize);
 	cout << "DONE" << endl;
 
