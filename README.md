@@ -25,7 +25,7 @@ All measurements with randomly generated arrays of the given size. Times are in 
 
 Size             | CPU      | Mergesort        |             | SSN        |             | bitonic      | Mergesort
 ---------------: | -------: | ---------------: | ----------: | ---------: | ----------: | -----------: | --------:
--                | Time     |  Time            |  Speedup    |  Time      | Speedup     |  Time        | Speedup
+   .              | Time     |  Time            |  Speedup    |  Time      | Speedup     |  Time        | Speedup
 4 * 1024         | 0.313    |  2.365           |  0.132      |  0.996     | 0.314       |  0.434       | 0.721
 64 * 1024        | 6.906    |  36.999          |  0.187      |  48.628    | 0.142       |  0.872       | 7.719
 256 * 1024       | 28.498   |  177.689         |  0.160      |  703.28    | 0.041       |  2.018       | 14.122
