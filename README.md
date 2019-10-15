@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/65641345.svg)](https://zenodo.org/badge/latestdoi/65641345)
+
 # GPU Sorting Algorithms in OpenCL
 
 This is the result of a freestyle assignment for a GPU-Computing class at KIT in Summer 2016.
