@@ -22,7 +22,7 @@ bool CSortingMain::DoCompute()
 	{
 		// set work size and size of input array
 		size_t LocalWorkSize[3] = { 256, 1, 1 };
-		unsigned int arraySize = 1024 * 256;
+		unsigned int arraySize = 1024 * 1024;
 
 		// info output
 		cout << "Start sorting array of size " << arraySize;
