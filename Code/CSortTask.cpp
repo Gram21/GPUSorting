@@ -11,8 +11,11 @@ GPU Computing / GPGPU Praktikum source code.
 #include <math.h>
 #include <sstream>
 #include <cstring>
+#include <climits>
 
 using namespace std;
+
+
 
 #define MERGESORT_SMALL_STRIDE 1024 * 64
 #define SSN_LIMIT 1024 * 512
@@ -26,6 +29,8 @@ string g_kernelNames[4] = {
 	"SimpleSortingNetwork",
 	"BitonicMergesort",
 };
+
+// std::min<unsigned long>(ulongarg, uintarg);
 
 CSortTask::CSortTask(size_t ArraySize, size_t LocWorkSize[3])
 	: m_N(ArraySize), LocalWorkSize(),
@@ -329,7 +334,7 @@ void CSortTask::Sort_SimpleSortingNetwork(cl_context Context, cl_command_queue C
 	// "padded" n, so we get an even amount of values
 	unsigned int n = (m_N & 1) ? (m_N + 1) : (m_N);
 
-	localWorkSize[0] = min(LocalWorkSize[0], n);
+	localWorkSize[0] = min<unsigned int>(LocalWorkSize[0], n);
 	globalWorkSize[0] = CLUtil::GetGlobalWorkSize(n >> 1, localWorkSize[0]);
 
 	// set general arguments
@@ -359,7 +364,7 @@ void CSortTask::Sort_SimpleSortingNetworkLocal(cl_context Context, cl_command_qu
 	// "padded" n, so we get an even amount of values
 	unsigned int n = (m_N & 1) ? (m_N + 1) : (m_N);
 
-	localWorkSize[0] = min(LocalWorkSize[0], n);
+	localWorkSize[0] = min<unsigned int>(LocalWorkSize[0], n);
 	globalWorkSize[0] = CLUtil::GetGlobalWorkSize(n >> 1, localWorkSize[0]);
 	unsigned int loop_lim = (n / localWorkSize[0]);
 	unsigned int offset = 0;
