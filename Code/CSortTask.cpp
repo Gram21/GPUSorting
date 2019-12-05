@@ -30,8 +30,6 @@ string g_kernelNames[4] = {
 	"BitonicMergesort",
 };
 
-// std::min<unsigned long>(ulongarg, uintarg);
-
 CSortTask::CSortTask(size_t ArraySize, size_t LocWorkSize[3])
 	: m_N(ArraySize), LocalWorkSize(),
 	m_hInput(NULL),
