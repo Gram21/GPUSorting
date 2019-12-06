@@ -24,8 +24,10 @@ Recommended sorting variant of these three. Is fast and benefits well from paral
 ## How to Build
 Best way is to use cmake with the [Code](Code/) folder as source folder. Use a 64-Bit compiler as otherwise bigger array sizes won't work.
 
-   cmake CMakeLists.txt
-   make
+```
+cmake CMakeLists.txt
+make
+```
 
 ## Measurements
 All measurements with randomly generated arrays of the given size. Times are in milliseconds. The CPU variant for comparison is a self written mergesort implementation that generally runs faster than std::sort.
